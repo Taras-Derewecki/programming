@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+            <meta charset="UTF-8" />
+            <title>Login</title>
+    <link type="text/css" rel="stylesheet" th:href="@{'/css/bootstrap.css'}" />
+    <link type="text/css" rel="stylesheet" th:href="@{'/css/home.css'}" />
+    <link type="text/css" rel="stylesheet" th:href="@{'https://fonts.googleapis.com/css?family=Stardos+Stencil'}" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+</head>
+
+
+        <body>
+            <div class ="text-center">
+                <h1 class= "fancy_header">Login</h1>
+            </div>
+
+
+            <div class = "th, nav" th:include="masterpage :: navigationUser"></div>
+
+            <div class = "table">
+                <div class = "tr">
+                    <form th:action="@{'/moby-dickens-login'}" method="post">
+                        <div class="row" th:if="${param.error}">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <span class="error">Invalid username and/or password</span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <label>Username: </label>
+                            </div>
+                            <div class="col-lg-4">
+                                <input name="username" id="username"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <label>Password: </label>
+                            </div>
+                            <div class="col-lg-4">
+                                <input name="userpass" id="userpass" type="password"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button type="submit">Log In</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                    crossorigin="anonymous"></script>
+        </body>
+    </html>

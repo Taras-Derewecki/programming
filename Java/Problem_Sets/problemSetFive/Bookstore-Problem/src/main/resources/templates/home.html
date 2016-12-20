@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:https="http://www.w3.org/1999/xhtml">
+
+        <head>
+            <meta charset="UTF-8" />
+            <title>Welcome to Moby Dickens' Homepage!</title>
+            <link type="text/css" rel="stylesheet" th:href="@{'/css/bootstrap.css'}" />
+            <link type="text/css" rel="stylesheet" th:href="@{'https://fonts.googleapis.com/css?family=Stardos+Stencil'}" />
+            <link rel="stylesheet" type="text/css" th:href="@{'/css/home.css'}"/>
+        </head>
+
+
+        <body>
+            <div class ="text-center">
+                <h1 class= "fancy_header">Welcome to Moby Dickens!</h1>
+            </div>
+
+            <div class = "th, nav" th:include="masterpage :: navigationUser"></div>
+
+
+            <div class = "table">
+                <div class = "tr">
+                    <p>Welcome to Moby Dickens' Website!</p>
+                    &nbsp;
+
+                    <form method="post" th:action="@{'/'}">
+
+                        <h3>Filter</h3>
+                        <div class="row">
+                            <div class="col-md-1"><label for="bookName">Book Name: </label></div>
+                            <div class="col-md-1"><input id="bookName" name="bookName" /></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-1">&nbsp;</div>
+                            <div class="col-md-1"><button  class="btn btn-default" type="submit">Submit</button></div>
+                            &nbsp;
+                        </div>
+                    </form>
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <!--<th>&nbsp;</th>-->
+                                <!--<th>&nbsp;</th>-->
+                                <th>Name</th>
+                                <th>Month Published</th>
+                                <th>Day Published</th>
+                                <th>Year Published</th>
+                                <th>Author</th>
+                                <th>ISBN</th>
+                                <th>Genre</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                                <tr th:each="book : ${books}">
+                                    <td><p th:text="${book.title}"/></td>
+                                    <td><p th:text="${book.month}"/></td>
+                                    <td><p th:text="${book.day}"/></td>
+                                    <td><p th:text="${book.year}"/></td>
+                                    <td><p th:text="${book.author}"/></td>
+                                    <td><p th:text="${book.isbn}"/></td>
+                                    <td><p th:text="${book.genre}"/></td>
+                                    <td><p th:text="${book.price}"/></td>
+                                </tr>
+                        </tbody>
+                     </table>
+                </div>
+            </div>
+
+            <!--<div th:include="home :: navigation"></div>-->
+
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                    crossorigin="anonymous"></script>
+        </body>
+    </html>
