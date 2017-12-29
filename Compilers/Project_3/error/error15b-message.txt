@@ -1,1 +1,0 @@
-Error at line 31: incorrect type of parameter(s) is passed to function func_int(...).

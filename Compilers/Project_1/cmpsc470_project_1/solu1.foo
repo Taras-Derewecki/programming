@@ -1,5 +1,0 @@
-<main><(><)>
-<{>
-    << add a into symbol table at 0 >><id,0> <=> <num,1><;>
-    <print> <id,0><;><< print output 1 >>
-<}>
