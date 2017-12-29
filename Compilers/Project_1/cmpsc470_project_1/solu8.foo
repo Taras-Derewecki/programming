@@ -1,0 +1,21 @@
+<main><(><)>
+<{>
+    << add za into symbol table at 0 >><id,0> <=> <num,1><;>
+    <id,0> <=> <id,0> <+> <num,2><;>
+    <id,0> <=>  <num,3> <+> <id,0><;>
+    << add zb into symbol table at 1 >><id,1> <=> <id,0> <+>  <num,4><;>
+    << add zc into symbol table at 2 >><id,2> <=> <id,0> <+> <id,1><;>
+    << add zd into symbol table at 3 >><id,3> <=> <id,1> <+> <id,2><;>
+    << add ze into symbol table at 4 >><id,4> <=> <id,2> <+> <id,3><;>
+    << add zf into symbol table at 5 >><id,5> <=> <id,3> <+> <id,4><;>
+    << add zg into symbol table at 6 >><id,6> <=> <id,4> <+> <id,5><;>
+    << add zh into symbol table at 7 >><id,7> <=> <id,5> <+> <id,6><;>
+    << add zi into symbol table at 8 >><id,8> <=> <id,6> <+> <id,7><;>
+    << add zj into symbol table at 9 >><id,9> <=> <id,7> <+> <id,8><;>
+    << add zk into symbol table at 10 >><id,10> <=> <id,8> <+> <id,9><;>
+    << add zl into symbol table at 11 >><id,11> <=> <id,9> <+> <id,10><;>
+    << add zm into symbol table at 12 >><id,12> <=> <id,10> <+> <id,11><;>
+    << add zn into symbol table at 13 >><id,13> <=> <id,11> <+> <id,12><;>
+    <real,3.141592> <if> <else> <while> <bool> <int> <float>  <true> <false> <==> <!=> <<> <>> <<=> <>=> <-> <*> </>  << add this into symbol table at 14 >><id,14> << add line into symbol table at 15 >><id,15> << add will into symbol table at 16 >><id,16> << add be into symbol table at 17 >><id,17> << add ignored into symbol table at 18 >><id,18> <;> // test 1 2 3
+    <print> <id,13><;><< print output 40960 >>
+<}>

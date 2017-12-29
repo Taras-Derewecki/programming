@@ -1,0 +1,12 @@
+main()
+{
+    float a;
+    a = a * 10;
+    if(true){
+        int a;
+        10 = 10;
+    }
+    else{
+        print a;
+    }
+}

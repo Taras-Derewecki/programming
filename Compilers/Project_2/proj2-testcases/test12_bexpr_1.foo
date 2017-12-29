@@ -1,0 +1,11 @@
+main()
+{
+    while(true)
+        print 1;
+    while(false)
+    {
+        print 2;
+    }
+    while(1 == 1)
+        print 3;
+}

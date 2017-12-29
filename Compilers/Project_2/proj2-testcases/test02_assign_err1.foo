@@ -1,0 +1,5 @@
+main()
+{
+    a = 1        // there is a syntax error
+    print a+;    // there is a syntax error
+}

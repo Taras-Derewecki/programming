@@ -1,0 +1,6 @@
+main()
+{
+    float x;
+    x = 100;
+    return (x * 100 + 1);
+}
