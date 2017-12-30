@@ -1,0 +1,11 @@
+main()
+{
+    int a;
+    int b;
+    int c;
+    float d;
+    int e;
+    float f;
+    f = a * b * c * d + e;
+    print f;
+}

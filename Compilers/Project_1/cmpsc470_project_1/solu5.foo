@@ -1,0 +1,9 @@
+<main><(><)>
+<{>
+    << add a into symbol table at 0 >><id,0> <=> <num,1><;>
+    <id,0> <=> <id,0> <+> <num,2><;>
+    <id,0> <=> <num,3> <+> <id,0><;>
+    << add b into symbol table at 1 >><id,1> <=> <id,0> <+> <num,4><;>
+    << add c into symbol table at 2 >><id,2> <=> <id,0> <+> <id,1><;>
+    <print> <id,2><;><< print output 20 >>
+<}>

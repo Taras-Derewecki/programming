@@ -1,0 +1,149 @@
+// Taras Derewecki
+// Problem Number 2
+
+const int DELAY = 50;
+int in312;
+int in472;
+
+semaphore teacher_ready;
+semaphore student_ready;
+semaphore mutex1;
+semaphore mutex2;
+semaphore mutex3;
+semaphore mutex312;
+semaphore mutex472;
+semaphore mutex;
+
+
+void Delay (void) 
+{
+	int i;
+  	int DelayTime;
+  	DelayTime = random (DELAY);
+  	for (i = 0; i < DelayTime; i = i + 1)
+  	{
+  	
+  	}
+}
+
+
+
+void professor ()
+{
+	int i;
+	for (i = 1; ; i = i + 1)
+	{
+		wait(student_ready);
+		signal(teacher_ready);
+		wait(mutex2);
+		wait(mutex);
+		cout << "Teacher is answering " << endl;
+		signal(mutex);
+		signal(mutex3);
+	}
+}
+
+void student (int students)
+{
+	wait(mutex1);
+	signal(student_ready);
+	wait(mutex);
+	cout << students << "_students are asking" << endl;
+	signal(mutex);
+	signal(mutex1);
+	signal(mutex2);
+	wait(teacher_ready);
+	wait(mutex3);
+	wait(mutex);
+	cout << students << "_student is listening" << endl;
+	signal(mutex);
+	Delay();
+}
+
+void student_312(int id)
+{
+	wait(mutex);
+	cout << "312_student_" << id << " arrived"<<endl;
+	signal(mutex);
+	wait(mutex312);
+	in312 = in312 + 1;
+	signal(mutex312);
+	if(in312 >= 2)
+	{
+		student(312);
+		wait(mutex312);
+		in312 = in312 - 2;
+		signal(mutex312);
+	}
+}
+
+void student_472(int id)
+{
+	wait(mutex);
+	cout << "472_student_" << id << " arrived"<<endl;
+	signal(mutex);
+	wait(mutex472);
+	in472 = in472 + 1;
+	signal(mutex472);
+	if(in472 >= 2)
+	{
+		student(472);
+		wait(mutex472);
+		in472 = in472 - 2;
+		signal(mutex472);
+	}
+}
+
+void student_519(int id)
+{
+	wait(mutex);
+	cout << "519_student_" << id << " arrived"<<endl;
+	signal(mutex);
+	student(519);
+}
+
+main() 
+{
+	initialsem(teacher_ready,0);
+	initialsem(student_ready,0);
+	initialsem(mutex1,1);
+	initialsem(mutex2,0);
+	initialsem(mutex3,0);
+	initialsem(mutex312,1);
+	initialsem(mutex472,1);
+	initialsem(mutex,1);
+
+	in312 = 0;
+	in472 = 0;
+
+	cobegin 
+	{
+		professor();
+		student_312(1);
+		student_312(2);
+		student_312(3);
+		student_312(4);
+		student_312(5);
+		student_312(6);
+		student_472(1);
+		student_472(2);
+		student_472(3);
+		student_472(4);
+		student_472(5);
+		student_472(6);
+		student_519(1);
+		student_519(2);
+		student_519(3);
+		student_519(4);
+		student_519(5);
+    }
+    
+     cout << endl;
+}
+
+
+
+
+
+
+

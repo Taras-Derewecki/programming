@@ -1,0 +1,6 @@
+main()
+{
+    int a;
+    while(true == true)
+        a = a + 1;
+}

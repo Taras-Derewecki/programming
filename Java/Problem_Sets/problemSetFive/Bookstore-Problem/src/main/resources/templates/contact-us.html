@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:https="http://www.w3.org/1999/xhtml">
+        <head>
+            <meta charset="UTF-8" />
+            <title>We want to hear from you!</title>
+            <link type="text/css" rel="stylesheet" th:href="@{'/css/bootstrap.css'}" />
+            <link type="text/css" rel="stylesheet" th:href="@{'/css/home.css'}" />
+            <link type="text/css" rel="stylesheet" th:href="@{'https://fonts.googleapis.com/css?family=Stardos+Stencil'}" />
+        </head>
+
+
+        <body>
+            <div class ="text-center">
+                <h1 class= "fancy_header">We Want to Hear from You!</h1>
+            </div>
+
+            <div class = "th, nav" th:include="masterpage :: navigationUser"></div>
+
+            <div class = "table">
+                <div class = "tr">
+                    <h2>Send e-mail to admin@mobydickens.com:</h2>
+
+                    <form action="mailto:admin@mobydickens.com" method="post" enctype="text/plain">
+                        Name:
+                        <br>
+                        <input type="text" name="name" />
+                        </br>
+
+                        E-mail:
+                        <br>
+                        <input type="text" name="mail" />
+                        </br>
+
+                        Subject:
+                        <br>
+                        <input type="text" name="Subject:" size="50" />
+                        </br>
+
+                        Question(s) / Comment(s):
+                        <br>
+                        <textarea rows="4" cols="50"></textarea>
+                        </br>
+                        <input type="submit" value="Send" />
+                        <input type="reset" value="Reset" />
+                    </form>
+                </div>
+
+
+            </div>
+        </body>
+    </html>

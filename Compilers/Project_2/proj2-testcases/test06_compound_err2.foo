@@ -1,0 +1,12 @@
+main()
+{
+    int a;
+    while(true)
+    {
+        int b;
+        {
+            b = b + 1;
+            int c;
+        }
+    }
+}
