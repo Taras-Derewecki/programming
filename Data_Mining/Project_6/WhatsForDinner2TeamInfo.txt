@@ -1,0 +1,15 @@
+Requested Info:
+
+Team Name: Winston 
+Team Members: Taras Derewecki,Khalid Qubbaj, Raj Zaveri
+
+Naive Bayes Model: 
+Best: Attempt #6
+CrossValScore = 0.8738
+Kaggle Public Leaderboard = 0.8423
+
+Support Vector Machine Model: 
+Best: Attempt #3
+CrossValScore = 0.9128
+Kaggle Public Leaderboard = 0.9010
+

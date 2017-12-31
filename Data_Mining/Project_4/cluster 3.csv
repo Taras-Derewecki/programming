@@ -1,0 +1,12 @@
+columns,means
+dst_bytes,353892.0
+src_bytes,416.5
+dst_host_count,110.0
+dst_host_srv_count,95.0
+duration,18.833333333333332
+srv_count,4.666666666666667
+count,1.0
+logged_in,1.0
+protocol_type_tcp,1.0
+flag_SF,1.0
+same_srv_rate,1.0

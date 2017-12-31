@@ -1,0 +1,28 @@
+﻿Apriori Algorithm Pseudocode
+
+Define:
+Ck: Candidate itemset of size k
+Lk: frequent itemset of size k
+
+Apriori(database, s)
+   L1= {frequent items}
+   k = 1
+   while (Lk.size() != 0)
+       Ck+1= Join(Lk)
+	   Ck+1= Prune(Ck+1,Lk)
+	   count = new dictionary
+	   for each transaction t in database 
+	      for each itemset c in Ck+1
+		     if len(c & t) == len(c) then // c is a subset of t
+		         count[c]++
+		     end if
+		  end for
+	   end for
+	   for each c in count’s keyset
+	     if (count[c] >= s)
+		     Lk+1.insert(c)
+	     end if
+	   end for
+	   k = k + 1
+	end while
+	return L1 union L2 union ... union Lk-1

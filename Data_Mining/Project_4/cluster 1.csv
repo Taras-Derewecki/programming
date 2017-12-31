@@ -1,0 +1,10 @@
+columns,means
+src_bytes,2679102.0
+duration,845.1666666666666
+dst_host_count,50.333333333333336
+dst_host_srv_count,20.5
+count,1.5
+srv_count,1.5
+protocol_type_tcp,1.0
+same_srv_rate,1.0
+service_ftp_data,1.0

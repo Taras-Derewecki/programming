@@ -1,0 +1,4 @@
+,count,unique values/cardinality,mode,mode frequency,% missing
+protocol_type,4898431,3,icmp,2833545,0
+service,4898431,70,ecr_i,2811660,0
+flag,4898431,11,SF,3744328,0
