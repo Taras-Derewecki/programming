@@ -1,0 +1,47 @@
+Log in to your HackerRank account.
+
+You will be working with the problem:
+
+https://www.hackerrank.com/contests/cmpsc463/challenges/let-me-count-the-ways- (Links to an external site.)Links to an external site.
+
+ 
+
+There are four solutions that you will want to produce.
+
+1) Create a top-down solution without memoization, and submit it.   
+
+Question 1: What is it about this problem that prevents this solution from passing all of the sample test cases?
+
+ 
+
+2) Add memoization to the top-down solution, and submit it.
+
+Question 2:  If you are getting a "Wrong Answer", it is likely that you are running out of a resource.  What resource might that be?
+
+ 
+
+3) Create a bottom-up solution, which stores the same number of values as the top-down approach (up to constant factors), and submit it.
+
+Question 3: Which solution the bottom-up one, or the top-down one is faster? Why is this the case?
+
+ 
+
+4) Create a bottom-up solution that uses O(1) space, and submit it.
+
+Question 4: What is the time complexity of your top-down solution with memoization, your first bottom-up solution, and your second bottom up solution?
+
+ 
+
+Submit the following:
+
+a) Your HackerRank id.
+
+b) Your four java source code files.
+
+c) Answers to the four questions above.
+
+ 
+
+Extra Credit:  Solve the following dynamic programming problem for 5 points extra credit:
+
+https://www.hackerrank.com/contests/cmpsc463/challenges/snakes-on-a-plane (Links to an external site.)Links to an external site.

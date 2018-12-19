@@ -1,0 +1,24 @@
+Watch the videos for the dynamic programming problem examples (for problems 1, 2, 7, and 10) at:
+
+https://people.cs.clemson.edu/~bcdean/dp_practice/ (Links to an external site.)Links to an external site.
+
+ 
+
+For each problem, submit the following (I am giving you the solutions for problem 1):
+
+a) An English description of a problem instance, e.g. for the max contiguous subsequence problem:
+
+	M(j) = max sum over all windows that end at index j 
+
+b) A recurrence relation that expresses the solution to a problem instance in terms of subproblems of the same type, e.g.:
+
+	M(j) = 0 if j = 0
+
+	M(j) = max(M(j-1) + A[j], A[j]) if j > 0
+
+c) An expression that gives the solution to the original problem in terms of the defined problem instances, e.g.:
+
+	max (M(i)) for i in [1..n]
+	
+
+Note: There will be a quiz on Thursday that will ask you to produce these values for one of the problems.

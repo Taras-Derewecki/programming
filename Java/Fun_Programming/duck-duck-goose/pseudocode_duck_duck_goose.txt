@@ -1,0 +1,12 @@
+Approach/Pseudocode behind "Duck, Duck, Goose?":
+
+Take game g as input
+
+Take question q and number of lies n as input
+Take all asked question and answer as input then store it all in an array
+
+For every possible "P" combination of all 10 places:
+	check "P" against all the rules (question and answer) and count number of lies
+	if number of lies = expected lies:
+		add combination "P" in answer
+print answer

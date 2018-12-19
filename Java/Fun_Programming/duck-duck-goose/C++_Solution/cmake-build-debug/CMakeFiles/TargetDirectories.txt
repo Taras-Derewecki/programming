@@ -1,0 +1,3 @@
+/Volumes/TARAS_32GB/School_Work/CMPSC463/Assignments/duck-duck-goose/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Volumes/TARAS_32GB/School_Work/CMPSC463/Assignments/duck-duck-goose/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Volumes/TARAS_32GB/School_Work/CMPSC463/Assignments/duck-duck-goose/cmake-build-debug/CMakeFiles/duck_duck_goose.dir

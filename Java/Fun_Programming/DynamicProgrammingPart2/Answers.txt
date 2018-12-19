@@ -1,0 +1,26 @@
+Hackerrank ID: McCree
+
+Java files for:
+  Question 1: java1.java
+  Question 2: java2.java
+  Question 3: java3.java
+  Question 4: java4.java
+
+Answers:
+
+  Q1) What is it about this problem that prevents this solution from passing all of the sample test cases?
+  A1) The third sample test case is for input 150. Since it is not memoized, the function would be recursively called for all values of n. This becomes too large for the third sample case.
+
+  Q2) If you are getting a "Wrong Answer", it is likely that you are running out of a resource.  What resource might that be?
+  A2) The resource we are running out of is the stack memory. Though the values are memoized, for a large value n, the function is still recursively called multiple times which exceeds the stack space.
+
+  Q3) Which solution the bottom-up one, or the top-down one is faster? Why is this the case?
+  A3) The bottom up solution is better in this case, as we only have to compute the values once and there is no recursion involved, which efficiently handles values for large n.
+
+  Q4) What is the time complexity of your top-down solution with memoization, your first bottom-up solution, and your second bottom up solution?
+  A4)
+                            top-down solution with memoization    first bottom-up solution    second bottom-up solution
+
+      Time Complexity  :                  O(n)                              O(n)                          O(n)
+
+      Space Complexity :                  O(n)                              O(n)                          O(1)
