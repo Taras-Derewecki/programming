@@ -1,7 +1,3 @@
-/**
- * Created by Taras on 10/28/2016.
- */
-
 import java.awt.Color;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -49,12 +45,7 @@ public class BarChart extends JPanel
     @Override
     public Dimension getPreferredSize() {return new Dimension(bars.size() * 350, 350);} // size of the graph
 
-    public static void main(String[] args)
-    {
-
-
-
-
+    public static void main(String[] args) {
         JFrame frame = new JFrame("Java Swing Bar Chart");
         BarChart chart = new BarChart();
 

@@ -1,7 +1,3 @@
-/**
- * Created by Taras on 10/29/2016.
- */
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -81,7 +77,8 @@ public class Sierpinski extends JApplet
             }
         }
 
-        private static Point midpoint(Point ptOne, Point ptTwo) {return new Point((ptOne.x + ptTwo.x) / 2, (ptOne.y + ptTwo.y) / 2);}
+        private static Point midpoint(Point ptOne, Point ptTwo)
+            {return new Point((ptOne.x + ptTwo.x) / 2, (ptOne.y + ptTwo.y) / 2);}
     }
 
     public static void main(String[] args)

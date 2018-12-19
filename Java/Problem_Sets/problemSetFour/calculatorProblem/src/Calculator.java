@@ -1,22 +1,11 @@
-/**
- * Created by Taras on 10/23/2016.
- */
-
 import java.awt.BorderLayout;
-import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.KeyStroke;
-import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.FlowLayout;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import javax.swing.JMenuItem;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -34,7 +23,6 @@ public class Calculator extends JFrame implements ActionListener
     private JButton buttonB[];
     private JPanel masterP, backspaceP, controlP;
 
-    boolean percentage;
     double numberOfLastDigit;
     boolean isClearOnNextNumber;
     String finalOperation;

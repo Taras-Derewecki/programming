@@ -1,101 +1,91 @@
-/**
- * Created by Taras on 10/22/2016.
- */
-
-import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.*;
 
-public class Notepad extends JFrame implements ActionListener
-{
-    private JTextArea textArea;
-    private JMenuBar menuBar;
-    private JMenu fileM;
-    private JScrollPane scrollPane;
-    private JMenuItem exitI, saveI, openI, newI;
-    private Component modalToComponent;
 
-    public Notepad()
-    {
-        super("Notepad");
-        setSize(555, 444);
-        Container pane = getContentPane();
-        pane.setLayout(new BorderLayout());
+public class Notepad extends JFrame implements ActionListener {
+    public static final int WIDTH = 600;
+    public static final int HEIGHT = 600;
 
-        textArea = new JTextArea();             // Textarea
-        menuBar = new JMenuBar();               // Menu Bar
-        fileM = new JMenu("File");              // File Menu
-        scrollPane = new JScrollPane(textArea); // Scroll Pane and add textarea to scroll pane
-        newI = new JMenuItem("New");            // Menu Item
-        exitI = new JMenuItem("Exit");          // Menu Item
-        saveI = new JMenuItem("Save");          // Menu item
-        openI = new JMenuItem("Open");          // Menu item
+    private JTextArea txtField;
 
-        textArea.setLineWrap(true);      // Text wraps around to next line
-        textArea.setWrapStyleWord(true); // Full word enters new line during wrapping process
-
-        setJMenuBar(menuBar);
-        menuBar.add(fileM);
-
-        // Adds to the file menu
-        fileM.add(newI);
-        fileM.add(openI);
-        fileM.add(saveI);
-        fileM.add(exitI);
-
-        pane.add(scrollPane, BorderLayout.CENTER); // allows for text to be entered
-
-        // Implement functions
-        newI.addActionListener(this);
-        saveI.addActionListener(this);
-        openI.addActionListener(this);
-        exitI.addActionListener(this);
-
-        setVisible(true); // Display notepad itself
+    public static void main(String[] args) {
+        Notepad text = new Notepad("Text File");
+        text.setVisible(true);
     }
 
-    public void actionPerformed(ActionEvent e) {
-        JMenuItem choice = (JMenuItem) e.getSource();
-        JFileChooser fileChooser = new JFileChooser(); // creating a file chooser
+    public Notepad(String title) {
+        super(title);
+        setSize(WIDTH,HEIGHT);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
 
-        if (e.getSource() == openI)
-        {
-            if (fileChooser.showOpenDialog(modalToComponent) == JFileChooser.APPROVE_OPTION) // if user selects a file
-            {
-                String line = null;
-                File file = fileChooser.getSelectedFile();
-//                BufferedReader br = new BufferedReader(new FileReader(line));
-//
-//
-//
-//                while (line = br.readLine() != null)
-//                {
-//                    textArea.append(line);
-//
+        txtField = new JTextArea();
+        add(txtField);
 
-//                }
+        JMenu menu = new JMenu("File");
 
-                textArea.append(file.toString());
-            }
+        JMenuItem newOption = new JMenuItem("New");
+        newOption.addActionListener(this);
+        menu.add(newOption);
 
-            if (choice == saveI)
-            {
+        JMenuItem openOption = new JMenuItem("Open");
+        openOption.addActionListener(this);
+        menu.add(openOption);
 
-                if (fileChooser.showSaveDialog(modalToComponent) == JFileChooser.APPROVE_OPTION)
-                {
-                    File file = fileChooser.getSelectedFile();
-//                    file.add(file.getName() + ".txt");
-//                    fileChooser.getSelectedFile(file);
+        JMenuItem saveOption = new JMenuItem("Save");
+        saveOption.addActionListener(this);
+        menu.add(saveOption);
 
+        JMenuItem exitOption = new JMenuItem("Exit");
+        exitOption.addActionListener(this);
+        menu.add(exitOption);
+
+        JMenuBar bar = new JMenuBar();
+        bar.add(menu);
+        setJMenuBar(bar);
+    }
+
+    public void actionPerformed(ActionEvent event) {
+
+        String actionTaken = event.getActionCommand();
+        switch (actionTaken) {
+            case "New": txtField.setText(""); break;
+
+            case "Save":
+                JFileChooser file = new JFileChooser();
+                int op = file.showOpenDialog(this);
+
+                if(op == JFileChooser.APPROVE_OPTION) {
+                    try {
+                        BufferedWriter write = new BufferedWriter(new FileWriter(file.getSelectedFile().getPath()));
+                        write.write(txtField.getText());
+                        write.close();
+                    }
+
+                    catch(Exception exception){ System.out.println("Error"); }
                 }
-            }
+                break;
 
-            if (choice == newI) {textArea.setText("");}
+            case "Open":                                                    //Case for Opening an Existing file
+                JFileChooser open = new JFileChooser();
+                int OP = open.showOpenDialog(this);
 
-            if (choice == exitI) {System.exit(0);}
+                if (OP == JFileChooser.APPROVE_OPTION) {
+                    try {
+                        BufferedReader read = new BufferedReader(new FileReader(open.getSelectedFile()));
+
+                        while (read.readLine()!=null)
+                            txtField.append(read.readLine());
+                    }
+
+                    catch (Exception exception){ System.out.println("Error"); }
+                }
+                break;
+
+            case "Exit": this.dispose(); break;
         }
     }
-
-    public static void main(String[] args) {new Notepad();}
 }
