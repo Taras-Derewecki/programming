@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ menu_item.title }}</title>
+</head>
+<body>
+    <h1>{{ menu_item.title }}</h1>
+    <p>Price: {{ menu_item.price }}</p>
+    <p>Category: {{ menu_item.category }}</p>
+    <!-- Add more fields as needed -->
+    <a href="{% url 'menu_list' %}">Back to Menu List</a>
+</body>
+</html>

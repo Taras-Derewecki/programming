@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu Items</title>
+</head>
+<body>
+    <h1>Menu Items</h1>
+    <ul>
+        {% for item in menu_items %}
+            <li><a href="{% url 'menu_detail' item.pk %}">{{ item.title }}</a></li>
+        {% empty %}
+            <li>No menu items available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
